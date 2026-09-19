@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
+package lista2;
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
 
 /**
  *
  * @author Tarcísio
  */
-
-import java.util.Scanner;
-import java.text.DecimalFormat;
-
-public class Lista1LT {
+public class Lista2 {
 
     /**
      * @param args the command line arguments
@@ -23,9 +23,7 @@ public class Lista1LT {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.println("Questao 24:");
-        questao24.exec();
-        
+        questao14.Q14.exec();
     }
     
 }
