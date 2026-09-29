@@ -9,5 +9,15 @@ package br.ifba.edu.lista4.questao7;
  * @author Tarcísio
  */
 public class ContaPoupanca extends ContaBancaria {
+    private double taxaRendimento;
+
+    public ContaPoupanca(String numeroConta, String titular, double saldo) {
+        super(numeroConta, titular, saldo);
+        this.taxaRendimento = 0.5;
+    }
+    
+    public void aplicarRendimento() {
+        super.setSaldo(super.getSaldo() + super.getSaldo() * taxaRendimento);
+    }
     
 }
