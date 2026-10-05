@@ -12,6 +12,17 @@ public class Desenvolvedor extends Funcionario {
     private String linguagemPrincipal;
 
     public Desenvolvedor(String linguagemPrincipal) {
+        setLinguagemPrincipal(linguagemPrincipal);
+    }
+
+    public String getLinguagemPrincipal() {
+        return linguagemPrincipal;
+    }
+
+    public void setLinguagemPrincipal(String linguagemPrincipal) {
+        if (linguagemPrincipal == null || linguagemPrincipal.trim().length() == 0) {
+            throw new IllegalArgumentException("Linguagem preferida inválida!");
+        }
         this.linguagemPrincipal = linguagemPrincipal;
     }
 

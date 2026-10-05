@@ -20,7 +20,7 @@ public class Empresa {
         setFuncionarios(funcionarios);
     }
 
-    public String getCnpj() {
+    public String getCnpj() { // cnpj
         return cnpj;
     }
 
@@ -28,7 +28,7 @@ public class Empresa {
         this.cnpj = cnpj;
     }
 
-    public String getRazaoSocial() {
+    public String getRazaoSocial() { // razao social
         return razaoSocial;
     }
 
@@ -36,7 +36,7 @@ public class Empresa {
         this.razaoSocial = razaoSocial;
     }
 
-    public ArrayList<Funcionario> getFuncionarios() {
+    public ArrayList<Funcionario> getFuncionarios() { // funcionario {dev, designer}
         return funcionarios;
     }
 
@@ -48,6 +48,29 @@ public class Empresa {
     }
     
     public void contratar(Funcionario f) {
-        // setFuncionarios(funcionarios.add(f));
+        if (f == null) {
+            throw new IllegalArgumentException("Erro na contratação, Funcionário inválido!");
+        }
+        funcionarios.add(f);
+    }
+    
+    public double calcularFolhaTotal() {
+        double numDevs = 0, numDes = 0;
+        for (Funcionario f: funcionarios) {
+            if (f != null) {
+                if (f.getClass() == Desenvolvedor.class) {
+                    numDevs++;
+                } else {
+                    numDes++;
+                }
+            }
+        }
+        return numDevs*3000 + numDes*2000;
+    }
+    
+    public void listarEquipe() {
+        for (Funcionario f: funcionarios) {
+            f.obterDescricaoFuncao();
+        }
     }
 }

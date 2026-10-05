@@ -11,12 +11,18 @@ package br.ifba.edu.lista4.questao9;
 public class Designer extends Funcionario {
     private String ferramentaPreferida;
 
-
+    public Designer(String ferramentaPreferida) {
+        setFerramentaPreferida(ferramentaPreferida);
+    }
+    
     public String getFerramentaPreferida() {
         return ferramentaPreferida;
     }
 
     public void setFerramentaPreferida(String ferramentaPreferida) {
+        if (ferramentaPreferida == null || ferramentaPreferida.trim().length() == 0) {
+            throw new IllegalArgumentException("Ferramenta preferida inválida!");
+        }
         this.ferramentaPreferida = ferramentaPreferida;
     }
     
